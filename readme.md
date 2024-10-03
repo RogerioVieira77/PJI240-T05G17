@@ -76,6 +76,7 @@ o	Por Cidade
 
 2. Arquitetura 
 
+<img src="/docs/Diagrama-da-Arquitetura.jpg">
  
 
 
@@ -106,7 +107,7 @@ Fluxo de Funcionamento
 
 3. Diagrama de Casos de Uso
 
-
+<img src="/docs/Diagrama de Caso de Uso.jpg">
  
 
 
