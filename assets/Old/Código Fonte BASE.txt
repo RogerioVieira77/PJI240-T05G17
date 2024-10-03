@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<title>Green Eletron</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="green eletron"/>
+	<meta name="description" content="Green eletron"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:700" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css?ver=1726191490">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <style>
+        .item-h-col>h2,
+        span#count1, span#count2, #circle1>label, #circle2>label, .count>p {
+            color: #fff;
+        }
+        .owl-carousel .owl-item img {
+            display: block;
+            width: 70%;
+        }
+        .bx-wrapper .bx-caption span {
+            padding: 30px;
+            text-align: center;
+        }
+        a.btn-a.btn-slider {
+            float: none;
+            font-weight: 700;
+            font-size: 12px;
+            background: #91bf1f;
+            color: #004753;
+            width: 190px;
+            padding: 2px 42px;
+            border: 1px solid #004753;
+            margin: 14px auto 0px auto;
+        }
+        a.btn-a.btn-slider:hover {
+            background: #004753!important;
+            color: #fff;
+        }
+        #img{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #img:hover{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+                        rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+                        rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+                        rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+                        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        @media only screen and (max-width: 1138px) {
+            .hidden-mobile {
+                display: none;
+            }
+        }
+    </style>
+    <!-- GA -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-96827110-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-96827110-1');
+    </script>
+</head>
+<body>
+	<!-- header content -->
+	<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="main-header">
+            <a class="navbar-brand" href="https://greeneletron.org.br">
+                <img class="logo-menu" src="/images/logo-green-mid.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                    data-target="#navbarCollapse" aria-controls="navbarCollapse" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                
+                    <li class="nav-item">
+                        <a id="parceiros-a" class="nav-link" href="javascript:void(0)">Green Eletron</a>
+                        <ul id="parceiros-s" class="menu-sub">
+                        <li class="sub-item">
+                                <a class="nav-link" href="sobre">Sobre Nós</a>    
+                            </li>
+                            <li class="sub-item">
+                                <a class="nav-link" href="dados">Dados</a>    
+                            </li>
+                            <li class="sub-item">
+                                <a class="nav-link" href="faq">FAQ</a>    
+                            </li>
+                            <li class="sub-item">
+                                <a class="nav-link" href="contato">Contato</a>    
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nossos-programas" class="nav-link" href="javascript:void(0)">Nossos Programas</a>
+                        <ul id="nossos-programas-s" class="menu-sub">
+                            <li class="sub-item">
+                                <a class="nav-link" href="eletronicos">Eletrônicos</a>    
+                            </li>
+                            <li class="sub-item">
+                                <a class="nav-link" href="pilhas">Pilhas</a>    
+                            </li>
+                            <li class="sub-item">
+                                <a class="nav-link" href="associados">Associados</a>    
+                            </li>
+                            <li class="sub-item">
+                                <a class="nav-link" href="parceiros">Parceiros</a>    
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a id="onde-descartar" class="nav-link" href="javascript:void(0)">Onde Descartar</a>
+                        <ul id="onde-descartar-s" class="menu-sub">
+                            <li class="sub-item">
+                                <a class="nav-link" href="localizador">Eletroeletrônicos</a>    
+                            </li>
+                            <li class="sub-item">
+                                <a class="nav-link" href="https://sistema.gmclog.com.br/info/green">Pilhas</a>    
+                            </li>
+                            <li class="sub-item">
+                                <a class="nav-link" href="coleta-em-casa">Coleta em casa</a>    
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog/">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://eletroniconaoelixo.com.br/" target="_blank">Eletrônico Não É Lixo</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="clear"></div>
+
+            <!-- <div class="itens-header">
+                <ul>
+                    <li class="nav-item-header">
+                        <a href="pilhas-eletronicos.php"><img src="images/icone-menu.png"><span>O que posso descartar</span></a>
+                    </li>
+                    <li class="divider">
+                        <span></span>
+                    </li>
+                    <li class="nav-item-header">
+                        <a href="localizador.php"><img src="images/icone-menu2.png"><span>Onde posso descartar</span></a>
+                    </li>
+                    <li class="divider">
+                        <span></span>
+                    </li>
+                    <li class="nav-item-header">
+                        <a href="adesao.php"><img src="images/icone-menu3.png"><span>Seja um associado</span></a>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+</header>
+ 
+	<!-- end header content -->
+
+	<!-- Page content -->
+	<main role="main" class="slider-home">
+        <div class="sliderhome">    
+            <div>
+                <img class="img-home-big" src="images/slider/slide-home-3.jpg">
+                <div class="bx-caption">
+                    <span>
+                        GESTORA PARA LOGÍSTICA REVERSA DE ELETRÔNICOS<br>
+                        <label>Em resposta à demanda crescente das empresas, governo e sociedade pela criação de alternativas estruturadas para a coleta e tratamento adequado dos eletroeletrônicos no fim da sua vida útil.</label>
+                        <a class="btn-a btn-slider" href="sobre">Saiba mais</a>
+                    </span>
+                </div>
+            </div>
+
+            <!--<div>
+                <img src="images/slider/slider-home-6.jpg">
+                <div class="bx-caption">
+                    <span>
+                        ELETRÔNICOS<br>
+                        <label>Eles estão cada vez mais presentes em nossas vidas.<br>Você sabe o que fazer com eles quando não têm mais utilidade?<br>Veja como fazer o descarte correto!</label>
+                        <a class="btn-a btn-slider" href="lixo-eletronico2">Saiba mais</a>
+                    </span>
+                </div>
+            </div>-->
+
+            <!--<div>
+                <img src="images/slider/slide-home-4.jpg">
+                <div class="bx-caption">
+                    <span>
+                        Seja um associado<br>
+                        <label>Garanta o descarte sustentável dos equipamentos eletroeletrônicos<br> produzidos pela sua empresa e cumpra a legislação brasileira.<br>SEJA GREEN VOCÊ TAMBÉM!</label>
+                        <a class="btn-a btn-slider" href="https://green.care-br.com/site/adesao">Saiba mais</a>
+                    </span>
+                </div>
+            </div>-->
+            
+            <div>
+                <a href="pesquisa-2023">
+             <img src="images/slider/slide-pesquisa-2022.png">
+                <!--<div class="bx-residuos">
+                    <a href="page-residuos.php" id="img">
+                        <img src="images/relatorio_residuos.png" id="img" width="280" alt="relatorio_residuos" />
+                    </a>
+                </div>-->
+                <a id="btn-residuos" href="pesquisa-2023">Saiba mais</a>
+                </a>
+            </div>
+            <div class="hidden-mobile">
+                <img src="images/slider/slider-home-8.png">
+                <div class="bx-video1">
+                <iframe width="560" height="315" class="slide-frame"
+                        src="https://www.youtube.com/embed/pMrHOTso4JM" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; 
+                        encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+                </div>
+            </div>
+            <div class="hidden-mobile">
+                <img src="images/slider/slider-home-9.png">
+                <div class="bx-video">
+                    <iframe width="560" height="315" class="slide-frame" src="https://www.youtube.com/embed/YYWIc-gVoI4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+		<div class="clear"></div>
+        
+        <div role="main" id="div1home" class="page-adesao row slider-page page-descarte" style="background: #FFF; margin-top: -44px;">
+            <img src="images/logo-top.png" class="log-top" style="right: 10px; margin-top: -48px;">
+
+            <div class="col-md-6">
+                <h2 class="h2-pa txt-center" style="font-weight: bold;font-size: 18px">O QUE É LIXO ELETRÔNICO?</h2>
+
+                <div class="rig-descarte">
+                    <!-- <img src="images/20190528-3L9A2341.jpg" style="padding: 30px; padding-top: 0px;"> -->
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/EkxjKMBRW9k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="col-md-6 ll-desc divtxt2" style="background: transparent; padding: 80px;">
+                <div class="lef-descarte">
+                    <div class="ar-dow ar-mobile"></div>
+                    <p>
+                        Termo utilizado para se referir a qualquer equipamento elétrico ou eletrônico, pilhas e baterias que não têm mais utilidade. Quando é alcançada a fim da vida útil destes produtos, eles são considerados lixo eletrônico. 
+                    </p>
+                    <a class="btn-a btn-estatuto" style="margin-bottom: 0;" href="lixo-eletronico2">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+        
+        <div role="main" class="page-adesao row slider-page page-descarte" style="margin-top: 80px; background: #fff;">
+            <img src="images/logo-top.png" class="log-top" style="left: 0; right: auto; z-index: 999; width: 290px;">
+            <div class="col-md-6" style="background: #004964;">
+                <div class="rig-descarte">
+                    <div class="ar-dow ar-mobile" style="margin-top: 180px;"></div>
+                    <h2 class="h2-pa" style="color: #fff!important;font-weight: bold;">O QUE PODE SER DESCARTADO?</h2>
+                    <p class="" style="color: #fff!important;">
+                        Os pontos de entrega voluntaria recebem notebooks, impressoras, eletrônicos de escritório, eletrônicos de pequeno porte, tablets e celulares, acessórios de informática,
+                        câmeras, cabos e carregadores, eletroportáteis, ferramentas Elétricas e muitos outros
+                    </p>
+                    <a href="lista-completa" style="width: 280px; margin-top: 30px; color: #fff; border: 1px solid #fff;" class="btn-a btn-estatuto">Acesse a lista completa</a>
+                </div>
+            </div>
+            <div class="col-md-6 ll-desc" style="background: #f8f9fa;">
+                <div class="lef-descarte">
+                    <img class="imgmobil" src="images/descartes-lixo.png" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="page-bottom" style="margin-top: 30px;">
+            <div class="main-header pages">
+                <div class="col-md-12">
+                    <h2 style="padding-top: 40px;">O QUE PODE SER DESCARTADO?</h2>
+                    <p>
+                        Os postos de entrega voluntária recebem notebooks, impressoras, tablets, celulares,<br>
+                        acessórios de informática, câmeras, cabos, carregadores e muito outros.
+                    </p>
+                    <a class="btn-a btn-estatuto" target="_blank" href="lista-completa.php" style="width: 180px">Acesse a lista completa</a>                </div>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ar-dow ar-mobile center" style="margin-top: 40px;"></div>
+                <h2 class="h2-pa txt-center" style="font-size: 18px;font-weight: bold;">CICLO DA LOGÍSTICA REVERSA</h2>
+                <h3 class="h3-pa txt-center" style="color: #676868; margin-bottom: 20px; font-size: 18px; margin-top: -16px;">Engajamento de todos para promover<br>o uso eficiente dos recursos</h3>
+            </div>
+            <div class="col-md-12">
+                <img class="imgmobil m0" src="images/ciclo-logistica-new.jpeg" style="width: 760px; display: block; margin: 0px auto;">
+            </div>
+        </div>
+        
+        <div  id="divcols" class="page-bottom page-bottom-sty2" style="margin-top: 38px; height: 300px;">
+            <div class="main-header pages page-sty2">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="ar-dow ar-mobile ardow-page"></div>
+                        <h2 class="h2-sty2">Localize o Ponto de Entrega Voluntária do programa Descarte Green mais perto de você!</h2>
+                        <a class="btn-a btn-estatuto" style="margin-bottom: 0;color: #ffffff;border: 1px solid #ffffff;" href="localizador">Pontos de entrega</a>
+                    </div>
+                    <div class="col-md-6" style="">
+                        <div class="coletores-slider center">
+                            <div class="slider-coletores">
+                                <!-- <div><img src="images/coletor1.png"></div>
+                                <div><img src="images/coletor11.png"></div>
+                                <div><img src="images/coletor2.png"></div>
+                                <div><img src="images/coletor3.png"></div> -->
+                                <div><img src="images/ft-coletor-p.png" alt=""></div>
+                                <div><img src="images/ft-coletor-m.png" alt=""></div>
+                                <div><img src="images/ft-coletor-g.png" alt=""></div>
+                                <div><img src="images/ft-coletor-gg.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page pages ciclo-page" style="background: #FFF;">
+            <div class="col-md-12">
+                <div class="main-header pages" style="margin-top: 20px;">
+                    <div class="ar-dow ar-mobile ardow-page center"></div>
+                    <h2 class="h2-pa txt-center" style="margin-top: 20px;">ASSOCIADAS ELETRÔNICOS</h2>
+                    <p class="txt-center">Confira quem garante o descarte sustentável de seus equipamentos eletroeletrônicos</p>
+                    <div class="associados-slider associadas-eletronicos center">
+                        <div class="owl-carousel owl-theme">
+                        <div class="item"><img src="images/Assoc_Eletronicos/acer.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/agis.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/aldo.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/all-nations.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/alpes.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/amazon.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/apple.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/asus.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/bluevix.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/bosch.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/brother.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/casio.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/clamper.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/cogra.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/compal.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/cortag.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/datacom.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/dazz.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/dell.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/dicomp.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/dl-xioami.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/duracell.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/eaton.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/elsys.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/epson.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/estrela.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/fagundez.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/fame.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/flex.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/foroni.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/foxconn.png" alt=""></div>
+                        <!-- <div class="item"><img src="images/Assoc_Eletronicos/fujifilm.png" alt=""></div> -->
+                        <div class="item"><img src="images/Assoc_Eletronicos/fusion.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/golden.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/gothan.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/harman.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/hasbro.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/hayamax.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/hayonik.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/hdl.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/hp-enterprise.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/hp.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/hydra.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/hyundai.png" alt=""></div>
+                        <!-- <div class="item"><img src="images/Assoc_Eletronicos/idata.png" alt=""></div> -->
+                        <div class="item"><img src="images/Assoc_Eletronicos/ingenico.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/ingram.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/inpower.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/intelbras.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/jabil.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/jacto.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/jfl-alarmes.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/karcher.png" alt=""></div>
+                        <!-- <div class="item"><img src="images/Assoc_Eletronicos/klatter.png" alt=""></div> -->
+                        <div class="item"><img src="images/Assoc_Eletronicos/legrand.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/lenovo.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/leroy.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/logitech.svg" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/lorenzetti.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/makita.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/margirius.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/mattel.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/maxprint.png?v=1" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/mazer.png" alt=""></div>
+                        <!-- <div class="item"><img src="images/Assoc_Eletronicos/mercado-livre.png" alt=""></div> -->
+                        <div class="item"><img src="images/Assoc_Eletronicos/microsoft.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/modulatto.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/motorola.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/multilaser.png" alt=""></div>
+                        <!-- <div class="item"><img src="images/Assoc_Eletronicos/nagem.png" alt=""></div> -->
+                        <div class="item"><img src="images/Assoc_Eletronicos/nhs.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/pauta.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/pioneer.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/positivo.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/rb-network.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/rayovac.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/rinnai.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/samsung.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/schneider.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/sid-nyl.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/snd.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/sodimac.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/solid.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/steck.png" alt=""></div>
+                        <!-- <div class="item"><img src="images/Assoc_Eletronicos/tedge.png" alt=""></div> -->
+                        <div class="item"><img src="images/Assoc_Eletronicos/tilibra.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/vaio.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/velans.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/venti-delta.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/xiaomi.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Eletronicos/yamaha.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="width: 100%; height: 100px;"></div>
+		<div class="page pages ciclo-page" style="background: #FFF;margin-top: -70px;margin-bottom: -80px;">
+            <div class="col-md-12">
+                <div class="main-header pages" style="margin-top: 40px;">
+                    <div class="ar-dow ar-mobile ardow-page center"></div>
+                    <h2 class="h2-pa txt-center" style="margin-top: 20px;">ASSOCIADAS PILHAS</h2>
+                    <p class="txt-center">Confira quem garante o descarte sustentável de suas pilhas e baterias portáteis</p>
+                    <div class="associados-slider center">
+                        <div class="owl-carousel owl-theme">
+                        <div class="item"><img src="images/Assoc_Pilhas/alfacell.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/avant.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/amazon.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/aoc.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/attic.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/br-supply.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/br55.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/carrefour.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/dagia.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/destro.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/duracell.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/elgin.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/energizer.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/fiat-lux.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/fujifilm.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/fusion.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/futuro.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/goal.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/gpa.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/hayamax.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/key.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/kian.png" alt=""></div>
+                        <!-- <div class="item"><img src="images/Assoc_Pilhas/klatter.png" alt=""></div> -->
+                        <div class="item"><img src="images/Assoc_Pilhas/leroy.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/maxmidia.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/maxprint.png" alt=""></div>
+                        <!-- <div class="item"><img src="images/Assoc_Pilhas/mercado-livre.png" alt=""></div> -->
+                        <div class="item"><img src="images/Assoc_Pilhas/multilaser.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/ourlux.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/panasonic.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/philips.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/pro.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/rayovac.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/scjohnson.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/sonepar.png" alt=""></div>
+                        <div class="item"><img src="images/Assoc_Pilhas/steck.png" alt=""></div>
+                        <!-- <div class="item"><img src="images/Assoc_Pilhas/tedge.png" alt=""></div> -->
+                        <div class="item"><img src="images/Assoc_Pilhas/ultra-power.png" alt=""></div>
+                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+	
+        <div class="btn-localizador">
+            <a href="localizador">
+                <img src="images/coletor-home.png">
+                <p>Onde descartar?</p> 
+            </a>
+        </div>
+	</main>
+	<!-- end page content -->
+	
+	<!-- footer -->
+	<footer class="back-footer">
+
+    <!-- Adicione a modal -->
+    <!-- <div class="modal" tabindex="-1" role="dialog" id="site_em_manutencao" style="    z-index: 111111111; top: 18%;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <img src="images/site-manutencao.png" alt="Imagem de Manutenção" style="width: 100%; height: auto;">
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="modal" tabindex="-1" role="dialog" id="site_em_manutencao" style="z-index: 111111111; background: #3030306b;">
+    <div class="modal-dialog" role="document" style="border: none; overflow: hidden; position: relative; top: 23%;">
+        <div class="modal-content">
+            <div style="position: relative;">
+                <!-- Botão invisível flutuando na parte superior direita -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" style="  opacity: 0; position: absolute; top: 0px; right: 0; z-index: 1; width: 22px;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <!-- Adicione a tag img com o caminho da sua imagem -->
+                <img src="images/site-manutencao.png" alt="Imagem de Manutenção" style="width: 100%; height: auto; border-radius: 0; z-index: 0;">
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="main-header" style="">
+        <div class="row">
+            <div class="col-md-3 mobile-6">
+                <h2 class="h2-f" style="pointer-events: none;">GREEN ELETRON</h2>
+                <ul class="footer-links">
+                    <li><a href="sobre">Sobre Nós</a></li>
+                    <li><a href="faq">FAQ</a></li>
+                    <li><a href="contato">Contato</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+                <h2 class="h2-f" style="pointer-events: none;">NOSSOS PROGRAMAS</h2>
+                <ul class="footer-links">
+                    <li><a href="eletronicos">Eletrônicos</a></li>
+                    <li><a href="pilhas">Pilhas</a></li>                   
+                </ul>
+                <a href="politica-privacidade" target="_blank"><h2 class="h2-f">POLÍTICA DE PRIVACIDADE</h2></a>
+            </div>
+            <div class="col-md-3 mobile-6">
+                <h2 class="h2-f"style="pointer-events: none;" >COMO SE ASSOCIAR</h2>
+                <h2 class="h3-f" style="pointer-events: none;">PILHAS/ELETRÔNICOS</h2>
+                <ul class="footer-links">
+                    <li><a href="adesao">Adesão Fabricante/Importador</a></li>
+                </ul>
+
+                <h2 class="h2-f" style="pointer-events: none;">COMO SER UM PONTO DE ENTREGA VOLUNTÁRIA</h2>
+                
+                <ul class="footer-links">
+                    <li><a href="cadastro-parceiro">Pilhas/Eletrônicos</a></li>
+                </ul>
+               
+               
+                <h2 class="h2-f"style="pointer-events: none;">CADASTRE SEU E-MAIL E RECEBA NOSSA NEWSLETTER</h2>
+                <div class="form-subs-news-mail" id="form-subs">
+                    <label class="inpt" style="border: 1px solid #ffffff;">
+                        <span class="label-news-mail">E-mail: </span>
+                        <input type="email" id="news-mail" name="news-mail" class="txt">
+                    </label>
+                    <div class="f-acesso">
+                        <button id="cad-news" type="submit" class="submit" style="color: #ffffff;border: 1px solid #ffffff;">CADASTRAR</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-3 mobile-12">
+                <h2 class="h2-f"style="pointer-events: none;">CONTATO</h2>
+                <ul class="footer-links">
+                    <li><a href="contato">Envie sua mensagem</a></li>
+                </ul>
+                
+                <h2 class="h2-f" style="margin-bottom: 40px;"><a href="contato-imprensa" style="color: inherit;">IMPRENSA</a></h2>
+                
+                <h2 class="h2-f"style="pointer-events: none;">SIGA A GREEN NAS REDES SOCIAIS</h2>
+                <ul class="social-links">
+                    <li>
+                        <a href="https://www.facebook.com/GreenEletron" target="_blank">
+                            <img src="images/facebook.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCZcGEK8SuZDnZ0YQICU9JyQ" target="_blank">
+                            <img src="images/youtube.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/greeneletron/" target="_blank">
+                            <img src="images/linkedin.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 mobile-12">
+                <div class="acesso-restrito">
+                    <div class="h-acesso" style="pointer-events: none;">
+                        <img src="images/cadeado.png">
+                        <h2>ACESSO RESTRITO<br>GREEN SOLUTION</h2>
+                    </div>
+                    <form method="POST" action="">
+                        <div class="m-acesso">
+                                <label class="inpt" style="border: 1px solid #ffffff;">
+                                    <span>E-mail: </span>
+                                    <input type="text" id="user-mail" name="user-mail" class="txt">
+                                </label>
+                                <label class="inpt" style="border: 1px solid #ffffff;">
+                                    <span>Senha: </span>
+                                    <input type="password" id="user-pass" name="user-pass" class="txt">
+                                </label>
+                        </div>
+
+                        <div class="f-acesso">
+                            <button onclick="disparaLoginPv()"  id="entrar-ws" type="button" class="submit" style="color: #ffffff;border: 1px solid #ffffff;">ENTRAR</button>
+                            <span class="tents"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="dfotr">
+            <div class="col-md-6 mobile-12">
+                <ul class="img-footer">
+                    <li><img src="images/footer-img-green.png"></li>
+                    <!-- <li><img src="images/footer-img-descarte.png"></li> -->
+                    <li><img src="images/footer-img-abine.png"></li>
+                </ul>
+            </div>
+            <div class="col-md-6 mobile-12" style="padding-bottom: 100px;">
+                <ul class="copyrigth-footer">
+                    <li>Powered by GreenPlat</li>
+                    <li>Green Eletron - Todos os Direitos Reservados | </li>
+                    <li>© 2024 | </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Adicione um ouvinte de evento ao botão invisível
+    document.querySelector('#site_em_manutencao .close').addEventListener('click', function() {
+        // Fechar a modal
+        console.log('oii');
+        var modal = document.querySelector('#site_em_manutencao');
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+    });
+});
+
+function disparaLoginPv(){
+    var email = $("#user-mail").val();
+    var senha = $("#user-pass").val();
+
+
+    var $modal = $( '#site_em_manutencao' );
+
+    $( 'body' ).addClass( 'modal-open' );
+    $modal.show();
+   
+    // if(email != "" && senha != "") {        
+        
+    //     var jsonUser = {'email':email, 'senha':senha}
+    //     localStorage.setItem('userGreen', JSON.stringify(jsonUser));
+
+    //     $.ajax({
+    //         type: "POST",
+    //         url: 'https://sistema.plataformaverde.com.br/api/extern/greeneletron/login',
+    //         data:{acao: 'login', email: email, senha: senha},
+    //         async: false,
+    //             success: function(data) {
+    //                 window.location.href = data;
+    //             }
+    //     });
+    // }else{
+        // $.notify({
+        //     title: '<strong>Atenção</strong>',
+        //     message: "E-mail/senha inválidos!",
+        //     placement: {
+        //         from: "top",
+        //         align: "center"	
+        //     },
+        //     animate:{
+        //         enter: "animated fadeInUp",
+        //         exit: "animated fadeOutDown"
+        //     }
+        // },{
+        //     type: 'danger'
+        // });
+    // }   
+}
+</script>	<!-- end footer -->
+
+	<!-- scripts -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/fontawesome.min.js"></script>
+	<script src="js/bootstrap-notify.min.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script src="js/circle-progress.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+    <script src="js/main-index.js"></script>
+    <script>
+        $(document).ready(function() { 
+            $('.slider').bxSlider();
+
+            $('.slider-coletores').bxSlider({ 
+                auto: true,
+                speed: 2000,
+                pause: 6000,
+                pager: false,
+                controls: false,
+                mode: 'fade'
+            });
+
+            $('.sliderhome').bxSlider({
+                auto: true,
+                speed: 2000,
+                pause: 20000,
+                controls: true,
+                pager: true,
+                captions: true
+            });
+
+            animateCirc();
+
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: false,
+                dots: true,
+                autoplay:true,
+                autoplayTimeout: 2000,
+                responsive:{
+                    0:{
+                        items:3
+                    },
+                    600:{
+                        items:4
+                    },
+                    1000:{
+                        items:7
+                    }
+                }
+            });
+
+            $("body").on("click", ".btn-slider", function() { 
+                var href = $(this).attr("href");
+                window.location.href = href;
+            });
+            
+            document.getElementById('open_banner_assembleia').addEventListener('click', (e) => {
+                window.open('images/Edital_Convocacao.pdf', '_blank');
+            });
+            
+
+        });
+        
+
+        $("#nossos-programas,#nossos-programas-s").mouseover(function() { 
+            var scroll = $(window).scrollTop();
+            if(scroll > 100)
+                $("#nossos-programas-s").css("background", "#004964");
+            else 
+                $("#nossos-programas-s").css("background", "transparent");
+           
+            $("#nossos-programas-s").show();
+        });
+        $("#nossos-programas,#nossos-programas-s").mouseout(function() {
+            $("#nossos-programas-s").hide(); 
+        });
+
+        $("#onde-descartar,#onde-descartar-s").mouseover(function() { 
+            var scroll = $(window).scrollTop();
+            if(scroll > 100)
+                $("#onde-descartar-s").css("background", "#004964");
+            else 
+                $("#onde-descartar-s").css("background", "transparent");
+           
+            $("#onde-descartar-s").show();
+        });
+        $("#onde-descartar,#onde-descartar-s").mouseout(function() {
+            $("#onde-descartar-s").hide(); 
+        });
+
+        $("#parceiros-a,#parceiros-s").mouseover(function() { 
+            var scroll = $(window).scrollTop();
+            if(scroll > 100)
+                $("#parceiros-s").css("background", "#004964");
+            else 
+                $("#parceiros-s").css("background", "transparent");
+           
+            $("#parceiros-s").show();
+        });
+        $("#parceiros-a,#parceiros-s").mouseout(function() {
+            $("#parceiros-s").hide(); 
+        });
+    
+        function  animateCirc() { 
+            var count1 =  parseInt($("#count1").text())
+            $('#circle1').circleProgress({
+                fill: "#91bf1f",
+                startAngle: -Math.PI / 2,
+                size: 133
+            }).on('circle-animation-progress', function(event, progress) {
+                $("#count1").html(parseInt(progress*count1));
+            });
+
+            var count2 =  parseInt($("#count2").text())
+            $('#circle2').circleProgress({
+                fill: "#91bf1f",
+                startAngle: -Math.PI / 2,
+                size: 133
+            }).on('circle-animation-progress', function(event, progress) {
+                $("#count2").html(parseInt(progress*count2));
+            });
+        }
+	</script>
+</body>
+</html>

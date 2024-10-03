@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GreenMed - Pontos de Descarte</title>
+        <link rel="stylesheet" href="/assets/styles/styles.css">
+    </head>
+<body>
+    <header id="menu_header">
+        <nav>
+            <a href="/index.html">
+                <img src="/assets/imagens/GreenMED_Logo.png" alt="Logotipo do Site">
+            </a>
+
+            <ul>
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/assets/paginas/consulta.html">Pontos de Coleta</a></li>
+                <li><a href="/assets/paginas/orientacoes.html">Orientações</a></li>
+                <li><a href="/assets/paginas/contato.html">Quem Somos</a></li>
+                <li><a href="/assets/paginas/login.html">Administração</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Formulário de Pesquisa -->
+    <h2>Encontre um ponto de coleta próximo à você:</h2><br>
+    <section id="pesquisa-pontos">
+            <form id="form-pesquisa">
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep">
+            <label for="regiao">Região:</label>
+            <select id="regiao" name="regiao">
+                <option value="norte">Norte</option>
+                <option value="sul">Sul</option>
+                <option value="leste">Leste</option>
+                <option value="oeste">Oeste</option>
+            </select>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade">
+            <button type="submit">Pesquisar</button>
+        </form>
+
+        <!-- Mapa de Pontos de Coleta -->
+        <div id="mapa-pontos"></div>
+    </section>
+    <footer>
+        <p>&copy; PJI 240 - DRP14 -Projeto Integrador em Computação II-Turma 005. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="/assets/script/scripts.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initializeMap"></script>
+
+</body>
+</html>
