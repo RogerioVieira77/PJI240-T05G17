@@ -17,8 +17,11 @@ public class PontoColeta {
     private String cidade;
     private String cep;
     private String estado;
+    private String regiao;
+    private String zona;
     private double latitude;
     private double longitude;
+    
 
     // Construtor padrão
     public PontoColeta() {
@@ -72,7 +75,23 @@ public class PontoColeta {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+    
+    public String getRegiao() {
+        return regiao;
+    }
 
+    public void setRegiao(String regiao) {
+        this.regiao = regiao;
+    }
+
+    public String getZona() {
+        return zona;
+    }
+
+    public void setZona(String zona) {
+        this.zona = zona;
+    }    
+    
     public double getLatitude() {
         return latitude;
     }
