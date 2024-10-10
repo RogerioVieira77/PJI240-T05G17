@@ -13,4 +13,3 @@ public interface PontoColetaRepository extends JpaRepository<PontoColeta, Long> 
     List<PontoColeta> findByZona(String zona);
     
 }
-
