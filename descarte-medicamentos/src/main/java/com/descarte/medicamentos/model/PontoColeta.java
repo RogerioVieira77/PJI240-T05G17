@@ -17,17 +17,18 @@ public class PontoColeta {
     private String cidade;
     private String cep;
     private String estado;
-    private String regiao;
+    private String regiaoDescr;
     private String zona;
+    private int regiaoCod;
     private double latitude;
     private double longitude;
     
-
-    // Construtor padrão
+    // Getters e Setters atualizados para o novo campo
+    
+    
     public PontoColeta() {
     }
-
-    // Getters e Setters
+    
     public Long getId() {
         return id;
     }
@@ -76,14 +77,22 @@ public class PontoColeta {
         this.estado = estado;
     }
     
-    public String getRegiao() {
-        return regiao;
+    public String getRegiaoDescr() {
+        return regiaoDescr;
     }
 
     public void setRegiao(String regiao) {
-        this.regiao = regiao;
+        this.regiaoDescr = regiaoDescr;
     }
 
+    public int getRegiaoCod() {
+        return regiaoCod;
+    }
+
+    public void setRegiaoCod(int regiaoCod) {
+        this.regiaoCod = regiaoCod;
+    }
+        
     public String getZona() {
         return zona;
     }

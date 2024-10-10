@@ -9,7 +9,9 @@ public interface PontoColetaRepository extends JpaRepository<PontoColeta, Long> 
     // Método de Busca de pontos de coleta por CEP, Cidade, Região e Zona
     List<PontoColeta> findByCep(String cep);
     List<PontoColeta> findByCidade(String cidade);
-    List<PontoColeta> findByRegiao(String regiao);
+    List<PontoColeta> findByRegiaoDescr(String regiaoDescr);
+    List<PontoColeta> findByRegiaoCod(int regiaoCod);
     List<PontoColeta> findByZona(String zona);
+	
     
 }

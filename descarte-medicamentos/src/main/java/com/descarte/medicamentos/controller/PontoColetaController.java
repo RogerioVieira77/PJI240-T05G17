@@ -3,11 +3,11 @@ package com.descarte.medicamentos.controller;
 import com.descarte.medicamentos.model.PontoColeta;
 import com.descarte.medicamentos.repository.PontoColetaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+//import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.descarte.medicamentos.service.PontoColetaService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 import java.io.IOException;
@@ -46,10 +46,16 @@ public class PontoColetaController {
     }
     
     // Novo endpoint para busca por região
-    @GetMapping("/regiao/{regiao}")
-    public List<PontoColeta> getPontosByRegiao(@PathVariable String regiao) {
-        return pontoColetaRepository.findByRegiao(regiao);
+    @GetMapping("/regiao/{regiaoDescr}")
+    public List<PontoColeta> getPontosByRegiao(@PathVariable String regiaoDescr) {
+        return pontoColetaRepository.findByRegiaoDescr(regiaoDescr);
     }
+    
+    @GetMapping("/regiao-cod/{regiaoCod}")
+    public List<PontoColeta> getPontosByRegiaoCod(@PathVariable int regiaoCod) {
+        return pontoColetaRepository.findByRegiaoCod(regiaoCod);
+    }
+    
 
     // Novo endpoint para busca por zona
     @GetMapping("/zona/{zona}")
