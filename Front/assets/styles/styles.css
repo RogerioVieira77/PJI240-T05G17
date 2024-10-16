@@ -9,8 +9,8 @@ body {
 
 /* Centraliza os Sub-titulos */
 h2 {
-
     text-align: center;
+    margin-bottom: 20px; /* Adiciona um espaçamento abaixo do título */
 }
 
 /* Header */
@@ -19,12 +19,13 @@ h2 {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10 ;
-    background-color:#AEF7B6;
+    z-index: 10;
+    background-color: #AEF7B6;
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
     padding: 20px 0;
 }
+
 .scrolled {
     background-color: #AEF7B6; /* Verde claro */
 }
@@ -72,6 +73,7 @@ nav ul li a:hover {
     width: 80%;
     max-height: 600px;
     overflow: hidden;
+    margin: 0 auto; /* Centraliza o banner */
 }
 
 .banner-carousel img {
@@ -114,6 +116,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 10px; /* Espaço acima do botão */
 }
 
 button:hover {
@@ -123,10 +126,42 @@ button:hover {
 /* Estilizando a seção de pesquisa */
 #pesquisa-pontos {
     display: flex;
-    justify-content: center; /* Centraliza o formulário horizontalmente */
+    flex-direction: column; /* Alinha o formulário e o mapa verticalmente */
+    justify-content: center; /* Centraliza o conteúdo */
     align-items: center;
     padding: 20px;
     background-color: #AEF7B6; /* Cor de fundo para diferenciar a seção */
+}
+
+#form-pesquisa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Limita a largura máxima do formulário */
+}
+
+#form-pesquisa label {
+    margin: 10px 0;
+}
+
+#form-pesquisa input,
+#form-pesquisa select {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px; /* Limita a largura dos campos */
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Defina a altura e largura da div que conterá o mapa */
+#mapa-pontos {
+    height: 500px;  /* Altura do mapa */
+    width: 100%;
+    max-width: 1000px; /* Limita a largura máxima do mapa */
+    margin-top: 20px;  /* Espaçamento acima do mapa */
+    border: 1px solid #ccc; /* Bordas do mapa */
 }
 
 /* Video Section */
@@ -174,6 +209,14 @@ footer a:hover {
 
     .video-section iframe {
         height: 300px;
+    }
+
+    #form-pesquisa {
+        max-width: 100%; /* Torna o formulário mais responsivo */
+    }
+
+    #mapa-pontos {
+        max-width: 100%; /* O mapa também se ajusta a telas menores */
     }
 }
 

@@ -14,9 +14,11 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/pontos-coleta")
+@CrossOrigin(origins = "*", allowCredentials = "false") // Habilita CORS para esse método específico
 public class PontoColetaController {
 
-    @Autowired
+    
+	@Autowired
     private PontoColetaRepository pontoColetaRepository;
     private PontoColetaService pontoColetaService;
 
@@ -34,6 +36,7 @@ public class PontoColetaController {
     }
 
     // Endpoint para buscar ponto de coleta por CEP
+    
     @GetMapping("/cep/{cep}")
     public List<PontoColeta> getPontosByCep(@PathVariable String cep) {
         return pontoColetaRepository.findByCep(cep);
