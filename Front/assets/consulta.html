@@ -1,67 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenMed</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    .
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GreenMed</title>
+	<link rel="stylesheet" href="./styles/styles.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
+
 <body>
-    <header id="menu_header">
-        <nav>
-            <a href="/index.html">
-                <img src="./imagens/GreenMED_Logo.png" alt="Logotipo do Site">
-            </a>
+	<header id="menu_header">
+		<nav>
+			<a href="/index.html">
+				<img src="./imagens/GreenMED_Logo.png" alt="Logotipo do Site">
+			</a>
 
-            <ul>
-                <li><a href="/index.html">Inicio</a></li>
-                <li><a href="./consulta.html">Pontos de Descarte</a></li>
-                <li><a href="./orientacoes.html">Orientações</a></li>
-                <li><a href="./about.html">Quem Somos</a></li>
-                <li><a href="./login.html">Administração</a></li>
-            </ul>
-        </nav>
-    </header>
+			<ul>
+				<li><a href="/index.html">Inicio</a></li>
+				<li><a href="./consulta.html">Pontos de Descarte</a></li>
+				<li><a href="./orientacoes.html">Orientações</a></li>
+				<li><a href="./about.html">Quem Somos</a></li>
+				<li><a href="./login.html">Administração</a></li>
+			</ul>
+		</nav>
+	</header>
 
-    <!-- Formulário de Pesquisa -->
-    <h2>Encontre um ponto de coleta próximo à você:</h2><br>
-    <section id="pesquisa-pontos">
-        <form id="form-pesquisa">
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep">
-            
-            <label for="zona">Zona</label>
-            <select id="zona" name="zona">
-                <option value="centro">Centro</option>
-                <option value="norte">Norte</option>
-                <option value="sul">Sul</option>
-                <option value="leste">Leste</option>
-                <option value="oeste">Oeste</option>                
-            </select>
-            
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade">
-            
-            <button type="submit">Pesquisar</button>
-        </form>
+	<main>
+		<!-- Formulário de Pesquisa -->
+		<h2>Encontre um ponto de coleta próximo à você:</h2><br>
 
-        <!-- Mapa de Pontos de Coleta -->
-        <div id="mapa-pontos" style="height: 500px; width: 100%;"></div>
-    </section>
-    <footer>
-        <p>&copy; PJI 240 - DRP14 -Projeto Integrador em Computação II-Turma 005. Todos os direitos reservados.</p>
-    </footer>
-    
-    <script src="./script/scripts.js"></script>
-    
-    <!-- Chama a API do Google Maps de forma Assincrona 
+		<section id="pesquisa-pontos">
+
+			<div class="search-buttons">
+				<!-- <button onclick="mostrarPesquisaCep()">Busca por CEP</button> -->
+				<button onclick="mostrarPesquisaZona()">Busca por Zona/Cidade</button>
+			</div>
+
+			<form id="form-pesquisa" class="pesquisa-cep">
+				<label for="cep">CEP:</label>
+				<input type="text" id="cep" name="cep">
+				<span id="logradouro"></span>
+
+				<button type="submit">Pesquisar</button>
+			</form>
+
+
+			<form id="form-pesquisa" class="pesquisa-zona">
+
+				<label for="zona">Zona</label>
+				<select id="zona" name="zona">
+					<option value="centro">Centro</option>
+					<option value="norte">Norte</option>
+					<option value="sul">Sul</option>
+					<option value="leste">Leste</option>
+					<option value="oeste">Oeste</option>
+				</select>
+
+				<label for="cidade">Cidade:</label>
+				<input type="text" id="cidade" name="cidade" value="São Paulo">
+
+				<button type="submit">Pesquisar</button>
+			</form>
+
+			<!-- Mapa de Pontos de Coleta -->
+			<div id="mapa-pontos" style="height: 500px; width: 100%;"></div>
+		</section>
+
+	</main>
+	<footer>
+		<p>&copy; PJI 240 - DRP14 -Projeto Integrador em Computação II-Turma 005. Todos os direitos reservados.</p>
+	</footer>
+
+	<script src="./script/scripts.js"></script>
+
+	<!-- Chama a API do Google Maps de forma Assincrona 
     <script async defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVg36ApEOzH9bAt6txoLBVs4iSzQKltbs&map_ids=96803e79bb05e4a4&callback=initializeMap&libraries=marker&v=weekly" 
     async defer loading="lazy"></script> -->
 
 
 </body>
+
 </html>

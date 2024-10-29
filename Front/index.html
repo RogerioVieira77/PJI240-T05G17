@@ -1,58 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenMed</title>
-    <link rel="stylesheet" href="./assets/styles/styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GreenMed</title>
+	<link rel="stylesheet" href="./assets/styles/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css">
 </head>
+
 <body>
-    <header id="menu_header">
-        <nav>
-            <a href="/index.html">
-                <img src="./assets/imagens/GreenMED_Logo.png" alt="Logotipo do Site">
-            </a>
+	<header id="menu_header">
+		<nav>
+			<a href="/index.html">
+				<img src="./assets/imagens/GreenMED_Logo.png" alt="Logotipo do Site">
+			</a>
 
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="./assets/consulta.html">Pontos de Descarte</a></li>
-                <li><a href="./assets/orientacoes.html">Orientações</a></li>
-                <li><a href="./assets/about.html">Quem Somos</a></li>
-                <li><a href="./assets/login.html">Administração</a></li>
-                <li><a href="./assets/colombia.html">Colombia</a></li>
-                <li><a href="./assets/mapa2.html">Mapa 2</a></li>
-            </ul>
-        </nav>
-    </header>
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="./assets/consulta.html">Pontos de Descarte</a></li>
+				<li><a href="./assets/orientacoes.html">Orientações</a></li>
+				<li><a href="./assets/about.html">Quem Somos</a></li>
+				<li><a href="./assets/login.html">Administração</a></li>
+			</ul>
+		</nav>
+	</header>
 
-    <!-- Carrossel de Banners -->
-    <section id="banners">
-        <div class="carousel">
-            <div class="slide">
-                <img src="./assets/imagens/Banner_1.jpg" alt="Banner 1">
-            </div>
-            <div class="slide">
-                <img src="./assets/imagens/Banner_2.png" alt="Banner 2">
-            </div>
-            <div class="slide">
-                <img src="./assets/imagens/Banner_3.png" alt="Banner 3">
-            </div>
-            <div class="slide">
-                <img src="./assets/imagens/Banner_4.png" alt="Banner 4">
-            </div>            
-        </div>
-    </section>
+	<!-- Carrossel de Banners -->
+	<section id="banners">
+		<div class="glide">
+			<div class="glide__track" data-glide-el="track">
+				<ul class="glide__slides">
+					<li class="glide__slide">
+						<img class="glide__slide__image" src="./assets/imagens/PassoaPasso.png" alt="Passo a Passo">
+					</li>
+					<!-- <li class="glide__slide">
+						<img class="glide__slide__image" src="./assets/imagens/Banner_2.png" alt="Banner 2">
+					</li>
+					<li class="glide__slide">
+						<img class="glide__slide__image" src="./assets/imagens/Banner_3.png" alt="Banner 3">
+					</li>
+					<li class="glide__slide">
+						<img class="glide__slide__image" src="./assets/imagens/Banner_4.png" alt="Banner 4">
+					</li> -->
+				</ul>
+			</div>
+			
+			<!--<div class="glide__bullets" data-glide-el="controls[nav]">
+				<button class="glide__bullet" data-glide-dir="=0"></button>
+				<button class="glide__bullet" data-glide-dir="=1"></button>
+				<button class="glide__bullet" data-glide-dir="=2"></button> 
+			</div> -->
+		</div>
 
-    <!-- Frame de Vídeo -->
-    <section id="video-info">
-        <h2>Informações sobre o Descarte de Medicamentos</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/c59vD493EkA?si=69M3HdiGc4V50END" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </section>
+	</section>
 
-    <footer>
-        <p>&copy; PJI 240 - DRP14 -Projeto Integrador em Computação II-Turma 005. Todos os direitos reservados.</p>
-    </footer>
-    
-    <script src="./assets/script/scripts.js"></script>
+	<!-- Frame de Vídeo -->
+	<section id="video-info" class="video-section">
+		<iframe class="video-embed" src="https://www.youtube.com/embed/c59vD493EkA?si=69M3HdiGc4V50END"
+			title="YouTube video player" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+		</iframe>
+
+		<div class="video-text">
+			<h2 class="video-title">Por que o descarte correto de medicamentos é essencial?</h2>
+			<p class="video-description">
+				Descubra a importância de descartar medicamentos vencidos ou não utilizados da forma correta.
+				A prática evita riscos à saúde e ao meio ambiente, preservando a qualidade da água e do solo,
+				além de proteger animais e pessoas de contaminações acidentais.
+			</p>
+			<ul class="video-list">
+				<li>Previne contaminação ambiental</li>
+				<li>Evita automedicação e intoxicações</li>
+				<li>Garante segurança para todos</li>
+			</ul>
+			<a href="assets/consulta.html"><button>Ver Pontos de Descarte</button></a>
+		</div>
+	</section>
+
+	<section class="lixo">
+		<div class="lixo__container">
+			<div class="lixo__content">
+				<h2 class="lixo__content__title">O que é Lixo Eletrônico?</h2>
+				<p>
+					Lixo eletrônico, também conhecido como e-lixo, são os resíduos de dispositivos eletrônicos que não
+					são mais utilizados ou estão quebrados. Isso inclui celulares, computadores, tablets, televisores,
+					eletrodomésticos e outros aparelhos com componentes eletrônicos. Esses resíduos exigem descarte
+					adequado, pois contêm substâncias tóxicas que podem contaminar o meio ambiente e representar um
+					risco
+					para a saúde humana.
+				</p>
+				<p>
+					A reciclagem correta dos eletrônicos é essencial para evitar danos ambientais, economizar recursos e
+					reduzir a quantidade de resíduos em aterros. Muitas empresas e ONGs oferecem pontos de coleta para
+					garantir que esses dispositivos sejam reciclados ou reaproveitados corretamente.
+				</p>
+				<a target="_blank" href="https://tecnoblog.net/responde/o-que-e-lixo-eletronico/"><button
+						class="lixo__btn">Saiba
+						mais!</button></a>
+			</div>
+			<div class="lixo__image">
+				<img src="assets/imagens/lixo-eletronico.jpg" alt="Imagem ilustrativa de lixo eletrônico" />
+			</div>
+		</div>
+	</section>
+
+	<section class="descartar">
+		<div class="descartar__container">
+			<div class="descartar__imagens">
+				<div class="descartar__imagem-item">
+					<img src="./assets/imagens/Pode_naoPode.jpg" height="466" alt="Não descarte na pia ou lixo comum">
+				</div>
+			</div>
+
+			<div class="descartar__conteudo">
+				<h2 class="descartar__titulo">COMO DESCARTAR</h2>
+				<p class="descartar__descricao">
+					Em cada Farmácia participante, existe uma estação coletora que foi desenvolvida
+					dentro das normas de segurança, visando atender às exigências sanitárias e facilitar
+					o descarte adequado de seus medicamentos.
+				</p>
+				<ol class="descartar__lista">
+					<li class="descartar__item">
+						<strong>Separe na sua casa</strong><br>
+						Verifique a data de vencimento de seus medicamentos. Separe os vencidos e os que
+						não serão mais usados.
+					</li>
+					<li class="descartar__item">
+						<strong>Leve a um ponto de coleta</strong><br>
+						Leve os medicamentos e suas embalagens para uma das farmácias participantes.
+						Confira em <a href="#">Pontos de Coleta</a>.
+					</li>
+					<li class="descartar__item">
+						<strong>Descarte corretamente</strong><br>
+						Siga as orientações na estação coletora para registrar, separar e inutilizar
+						as embalagens, depositando-as nos locais indicados.
+					</li>
+				</ol>
+				<a href="assets/orientacoes.html"><button>Saiba mais</button></a>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<p>&copy; PJI 240 - DRP14 -Projeto Integrador em Computação II-Turma 005. Todos os direitos reservados.</p>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/coordenadas-do-cep@1.2.0/index.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
+	<script src="./assets/script/scripts.js?v=1.0"></script>
 </body>
+
 </html>

@@ -1,34 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GreenMed</title>
-        <link rel="stylesheet" href="/assets/styles/styles.css">
-    </head>
-<body>
-    
-    <body>
-        <header id="menu_header">
-            <nav>
-                <a href="/index.html">
-                    <img src="./imagens/GreenMED_Logo.png" alt="Logotipo do Site">
-                </a>
-    
-                <ul>
-                    <li><a href="/index.html">Inicio</a></li>
-                    <li><a href="./consulta.html">Pontos de Descarte</a></li>
-                    <li><a href="./orientacoes.html">Orientações</a></li>
-                    <li><a href="./about.html">Quem Somos</a></li>
-                    <li><a href="./login.html">Administração</a></li>
-                </ul>
-            </nav>
-        </header>
 
-    <footer>
-        <p>&copy; PJI 240 - DRP14 -Projeto Integrador em Computação II-Turma 005. Todos os direitos reservados.</p>
-    </footer>
-    
-    <script src="/assets/script/scripts.js"></script>
-</body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GreenMed</title>
+	<link rel="stylesheet" href="/assets/styles/styles.css">
+</head>
+
+<body>
+
+	<body>
+		<header id="menu_header">
+			<nav>
+				<a href="/index.html">
+					<img src="./imagens/GreenMED_Logo.png" alt="Logotipo do Site">
+				</a>
+
+				<ul>
+					<li><a href="/index.html">Inicio</a></li>
+					<li><a href="./consulta.html">Pontos de Descarte</a></li>
+					<li><a href="./orientacoes.html">Orientações</a></li>
+					<li><a href="./about.html">Quem Somos</a></li>
+					<li><a href="./login.html">Administração</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<section class="medicamento">
+				<div class="medicamento__container">
+
+					<h2 class="medicamento__title">Orientações de Descarte</h2>
+					<div class="medicamento__introducao">
+						<p class="medicamento__texto">
+							Em cada Farmácia participante, existe uma estação coletora que foi desenvolvida com
+							alta tecnologia e segurança, visando a atender às exigências sanitárias e facilitar
+							o descarte adequado de seus medicamentos.
+						</p>
+					</div>
+
+					<div class="medicamento__conteudo">
+						<div class="medicamento__coluna medicamento__coluna--imagens">
+							<img src="imagens/estacao-coletora.jpg" alt="Estação Coletora ECOMED"
+								class="medicamento__imagem">
+							<p class="medicamento__legenda">Estações coletoras ECOMED</p>
+						</div>
+
+						<div class="medicamento__coluna medicamento__coluna--texto">
+							<ol class="medicamento__lista">
+								<li class="medicamento__item">
+									<strong>Separe na sua casa</strong><br>
+									Verifique na sua casa a data de vencimento dos seus medicamentos. Separe os vencidos
+									e aqueles que você sabe que não serão mais usados.
+								</li>
+								<li class="medicamento__item">
+									<strong>Leve a um ponto de coleta</strong><br>
+									Leve-os com suas respectivas caixas a uma das farmácias participantes e localize
+									uma das nossas estações coletoras ECOMED. Confira em <a href="consulta.html">Pontos
+										de
+										Coleta</a>.
+								</li>
+								<li class="medicamento__item">
+									<strong>Descarte corretamente</strong><br>
+									Na estação coletora, siga a orientação de registro, separação e inutilização das
+									embalagens, depositando-as nos locais indicados.
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<p>&copy; PJI 240 - DRP14 -Projeto Integrador em Computação II-Turma 005. Todos os direitos reservados.</p>
+		</footer>
+
+		<script src="/assets/script/scripts.js"></script>
+	</body>
+
 </html>

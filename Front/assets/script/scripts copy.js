@@ -45,53 +45,46 @@ function clearMap() {
 	markers = [];  // Limpa o array de marcadores
 }
 
-async function buscarPontosColeta(cep) {
-    const zona = document.getElementById('zona').value;
-    const cidade = document.getElementById('cidade').value;
-    const baseUrl = 'http://4.228.51.99:8080/api/pontos-coleta';
-    let url = baseUrl;
+function buscarPontosColeta(cep) {
+	const zona = document.getElementById('zona').value;
+	const cidade = document.getElementById('cidade').value;
+	const baseUrl = 'http://4.228.51.99:8080/api/pontos-coleta';
+	let url = baseUrl;
 
-    // Construção da URL com base nos parâmetros
-    if (cep) url += `/cidade/SÃO%20PAULO`;  // Altere para o necessário
-    else if (zona) url += `/zona/${zona}`;
-    else if (cidade) url += `/cidade/${cidade}`;
+	// Mantendo a lógica de construção da URL
+	if (cep) url += `/cidade/São Paulo`;  // Traz todos os pontos da cidade para filtrar
+	else if (zona) url += `/zona/${zona}`;
+	else if (cidade) url += `/cidade/${cidade}`;
 
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-            mode: 'cors', // Configuração CORS
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+	fetch(url)
+		.then(response => {
+			if (!response.ok) throw new Error('Erro na requisição: ' + response.statusText);
+			return response.json();
+		})
+		.then(data => {
+			clearMap();
 
-        if (!response.ok) throw new Error('Erro na requisição: ' + response.statusText);
+			// Se o CEP foi fornecido, filtra os pontos próximos
+			const pontosFiltrados = cep ? filtrarPontosPorFaixaDeCep(data, cep, 2000) : data;
 
-        const data = await response.json();
-        clearMap();
+			if (cep) {
+				const response = fetch(`https://viacep.com.br/ws/${cep}/json/`).then(async (data) => {
+					const jsonData = await data.json();
+					htmlLogradouro.innerHTML = `${jsonData["logradouro"]}, ${jsonData["bairro"]}`
+				});
+			}
 
-        // Filtrar pontos por CEP, se fornecido
-        const pontosFiltrados = cep ? filtrarPontosPorFaixaDeCep(data, cep, 2000) : data;
+			// Adiciona os pontos filtrados no mapa
+			pontosFiltrados.forEach(ponto => {
+				const latitude = ajustarCoordenada(ponto.latitude);
+				const longitude = ajustarCoordenada(ponto.longitude);
+				console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
 
-        // Usar o viacep se o CEP foi fornecido
-        if (cep) {
-            const viacepResponse = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-            const jsonData = await viacepResponse.json();
-            document.getElementById('htmlLogradouro').innerHTML = `${jsonData["logradouro"]}, ${jsonData["bairro"]}`;
-        }
-
-        // Adicionar pontos filtrados no mapa
-        pontosFiltrados.forEach(ponto => {
-            const latitude = ajustarCoordenada(ponto.latitude);
-            const longitude = ajustarCoordenada(ponto.longitude);
-            console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-            addMarkerToMap(latitude, longitude, ponto.nome, ponto.endereco);
-        });
-    } catch (error) {
-        console.error('Erro ao buscar pontos de coleta:', error);
-    }
+				addMarkerToMap(latitude, longitude, ponto.nome, ponto.endereco);
+			});
+		})
+		.catch(error => console.error('Erro ao buscar pontos de coleta:', error));
 }
-
 
 // Função para ajustar a latitude e longitude se necessário
 function ajustarCoordenada(valor) {
