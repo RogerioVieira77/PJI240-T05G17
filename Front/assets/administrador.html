@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pilulas & Bulas</title>
+		<link rel="stylesheet" href="/assets/styles/styles.css">
+	</head>
+
+	<body>
+
+		<body>
+			<header id="menu_header">
+				<nav>
+					<a href="/index.html">
+						<img src="./imagens/GreenMED_Logo.png" alt="Logotipo do Site">
+					</a>
+
+					<ul>
+						<li><a href="/index.html">Inicio</a></li>
+						<li><a href="./consulta.html">Pontos de Descarte</a></li>
+						<li><a href="./orientacoes.html">Orientações</a></li>
+						<li><a href="./about.html">Quem Somos</a></li>
+						<li><a href="./login.html">Administração</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<main>
+				<section class="cadastro">
+    <h2>Cadastro de Ponto de Coleta</h2>
+        <form id="cadastroPontoColetaForm" class="cadastro__container">
+        <div class="cadastro__tags">
+            <button type="button" class="cadastro__btn cadastro__btn--manual">Manual</button>
+            <button type="button" class="cadastro__btn cadastro__btn--auto">Auto</button>
+        </div>
+
+            <input type="text" id="nomePonto" class="cadastro__input" placeholder="NOME DO PONTO" required>
+            <input type="text" id="cep" class="cadastro__input" placeholder="CEP" required>
+
+            <div class="cadastro__disabled">
+                <input disabled type="text" id="endereco" class="cadastro__input cadastro__endereco" placeholder="Endereço">
+                <input disabled type="text" id="cidade" class="cadastro__input" placeholder="Cidade">
+                <input disabled type="text" id="estado" class="cadastro__input" placeholder="Estado">
+            </div>
+
+            <input type="text" id="zona" class="cadastro__input" placeholder="Zona" required>
+            <input type="text" id="regiaoDescr" class="cadastro__input" placeholder="Região" required>
+            <input type="hidden" value="0" id="regiaoCod" class="cadastro__input" placeholder="Código da Região" required>
+            <input type="number" step="any" id="latitude" class="cadastro__input" placeholder="Latitude" required>
+            <input type="number" step="any" id="longitude" class="cadastro__input" placeholder="Longitude" required>
+
+            <div class="cadastro__buttons">
+                <button type="button" id="limparBtn" class="cadastro__action cadastro__action--clear">Limpar</button>
+                <button type="submit" id="enviarBtn" class="cadastro__action cadastro__action--send">Enviar</button>
+            </div>
+        </form>
+</section></main>
+
+<!-- Adicione este script antes do fechamento da tag </body> -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('cadastroPontoColetaForm');
+        const limparBtn = document.getElementById('limparBtn');
+
+        // Função para limpar o formulário
+        limparBtn.addEventListener('click', () => {
+            form.reset();
+            // Se você estiver preenchendo automaticamente os campos de endereço, desative-os novamente
+            document.getElementById('endereco').value = '';
+            document.getElementById('cidade').value = '';
+            document.getElementById('estado').value = '';
+        });
+
+        // Função para capturar o CEP e preencher automaticamente o endereço (opcional)
+        const cepInput = document.getElementById('cep');
+        cepInput.addEventListener('blur', () => {
+            const cep = cepInput.value.replace(/\D/g, '');
+
+            if (cep !== "") {
+                const validacep = /^[0-9]{8}$/;
+
+                if(validacep.test(cep)) {
+                    // Consulta o ViaCEP
+                    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (!data.erro) {
+                                document.getElementById('endereco').value = data.logradouro;
+                                document.getElementById('cidade').value = data.localidade;
+                                document.getElementById('estado').value = data.uf;
+                            } else {
+                                alert("CEP não encontrado.");
+                                form.reset();
+                            }
+                        })
+                        .catch(() => {
+                            alert("Erro ao consultar o CEP.");
+                            form.reset();
+                        });
+                } else {
+                    alert("Formato de CEP inválido.");
+                    form.reset();
+                }
+            }
+        });
+
+        // Função para enviar os dados do formulário
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Impede o comportamento padrão do formulário
+
+            // Coleta os valores dos campos
+            const nome = document.getElementById('nomePonto').value.trim();
+            const cep = document.getElementById('cep').value.trim();
+            const endereco = document.getElementById('endereco').value.trim();
+            const cidade = document.getElementById('cidade').value.trim();
+            const estado = document.getElementById('estado').value.trim();
+            const zona = document.getElementById('zona').value.trim();
+            const regiaoDescr = document.getElementById('regiaoDescr').value.trim();
+            const regiaoCod = parseInt(document.getElementById('regiaoCod').value.trim());
+            const latitude = parseFloat(document.getElementById('latitude').value.trim());
+            const longitude = parseFloat(document.getElementById('longitude').value.trim());
+
+            // Validação básica dos dados
+            if (!nome || !cep || !endereco || !cidade || !estado || !zona || !regiaoDescr || isNaN(regiaoCod) || isNaN(latitude) || isNaN(longitude)) {
+                alert("Por favor, preencha todos os campos obrigatórios corretamente.");
+                return;
+            }
+
+            // Cria o objeto PontoColeta
+            const pontoColeta = {
+                nome,
+                cep,
+                endereco,
+                cidade,
+                estado,
+                regiaoDescr,
+                regiaoCod,
+                zona,
+                latitude,
+                longitude
+            };
+
+            // Envia a requisição POST para o backend
+            fetch('http://4.228.51.99:8080/api/pontos-coleta', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(pontoColeta)
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    return response.json().then(err => { throw err; });
+                }
+            })
+            .then(data => {
+                alert("Ponto de coleta cadastrado com sucesso!");
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert("Ocorreu um erro ao cadastrar o ponto de coleta.");
+            });
+        });
+    });
+</script>
+
+
+				<script>
+					// Função para verificar a existência do token
+					function verificarAutenticacao() {
+						const token = localStorage.getItem('authToken');
+						if (!token) {
+							// Se o token não existir, redireciona para a página de login
+							alert('Você precisa estar logado para acessar esta página.');
+							window.location.href = '/assets/login.html';
+						}
+					}
+
+					// Chama a função ao carregar a página
+					window.onload = verificarAutenticacao;
+				</script>
+
+				<footer>
+					<p>&copy; PJI 240 - DRP14 -Projeto Integrador em Computação II-Turma 005. Todos os direitos reservados.</p>
+				</footer>
+
+				<script src="/assets/script/scripts.js"></script>
+		</body>
+
+</html>

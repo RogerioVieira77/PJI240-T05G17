@@ -1,4 +1,10 @@
 /* Global Styles */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 body {
 	font-family: 'Arial', sans-serif;
 	color: #000000;
@@ -8,7 +14,7 @@ body {
 }
 
 main {
-	background-color: #adf7b6;
+	background-color:#96f57f;
 	min-height: calc(100vh - 130px - 104px);
 }
 
@@ -28,19 +34,19 @@ h2 {
 	left: 0;
 	width: 100%;
 	z-index: 10;
-	background-color: #AEF7B6;
+	background-color: #96f57f;
 	transition: background-color 0.3s ease;
 	box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
 	padding: 20px 0;
 }
 
 .scrolled {
-	background-color: #AEF7B6;
+	background-color: #008c3a;
 	/* Verde claro */
 }
 
 header img {
-	height: 100px;
+	height: 150px;
 	width: auto;
 	margin-left: 20px;
 }
@@ -68,7 +74,7 @@ nav ul li a {
 	color: #000;
 	font-weight: bold;
 	transition: color 0.3s;
-	font-size: 18px;
+	font-size: 25px;
 }
 
 nav ul li a:hover {
@@ -122,10 +128,18 @@ button {
 }
 
 button:hover {
-	background-color: #008c3a;
+	background-color: #3b3737;
 }
 
 /* Estilizando a seção de pesquisa */
+
+#ponto-coleta-he h2 {
+		text-align: center;
+		padding-bottom: 20px;
+		background-color: #96f57f;
+	
+	}
+
 #pesquisa-pontos {
 	display: flex;
 	flex-direction: column;
@@ -134,7 +148,7 @@ button:hover {
 	/* Centraliza o conteúdo */
 	align-items: center;
 	padding: 20px;
-	background-color: #AEF7B6;
+	background-color: #008c3a;
 	/* Cor de fundo para diferenciar a seção */
 }
 
@@ -232,7 +246,7 @@ button:hover {
 	width: 60%;
 	z-index: -1;
 	position: absolute;
-	background-color: #adf7b6;
+	background-color: #008c3a;
 	border-radius: 0 12px 12px 0;
 }
 
@@ -382,7 +396,7 @@ button:hover {
 
 .descartar__imagem-item img {
 	height: auto;
-	max-width: 475px;
+	max-width: 375px;
 	width: 100%;
 	object-fit: contain;
 }
@@ -584,7 +598,7 @@ button:hover {
 
 /* Footer */
 footer {
-	background-color: #333;
+	background-color: #008c3a;
 	color: white;
 	padding: 20px;
 	text-align: center;
@@ -663,4 +677,92 @@ footer a:hover {
 	.banner-carousel img {
 		object-fit: contain;
 	}
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.cadastro {
+	text-align: center;
+}
+
+.cadastro__container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.cadastro h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	padding-top: 20px;
+}
+
+.cadastro__btn {
+	padding: 10px;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.cadastro__btn--manual {
+	background-color: #3B5998;
+}
+
+.cadastro__btn--auto {
+	background-color: #4CAF50;
+}
+
+.cadastro__input {
+	width: 100%;
+	/* Ajusta a largura */
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.cadastro__input--green {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.cadastro__buttons {
+	grid-column: span 2;
+	display: flex;
+	justify-content: space-around;
+	margin-top: 10px;
+}
+
+.cadastro__action {
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.cadastro__disabled {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	gap: 16px;
+	align-items: center;
+}
+
+.cadastro__endereco {
+	grid-column: span 2;
 }

@@ -1,0 +1,26 @@
+*Geral*
+- Tom do Verde
+- Rodapé em Branco
+- Fundo Bege (F5F5F5)
+- Barra braca no ponto de descarte
+- Mais pontos de Descarte
+
+
+*Tela Inicial*
+- Carrossel - Substitui o carrossel por uma imagem Estática
+- Lixo Eletronico - Para substituir essa parte do Lixo eletronico preciso do texto e da imagem relacionada à como sugiram os pontos de coleta.
+- Como Descartar  - Coloquei a imagem de Podem/nãoPodem, mas ficou meio desproporcional se quiserem arrumar eu preciso de uma imagem de (Largura: 375 x 466 Altura)
+
+*outras telas Quem Somos e Orientações*
+- Preciso dos Textos e das imagens
+
+
+*ADMINISTRAÇÃO*
+- Estou trabalhando no Login
+
+*Tela de Acessibilidade* 
+- Tem essa ainda para fazer.
+
+
+
+

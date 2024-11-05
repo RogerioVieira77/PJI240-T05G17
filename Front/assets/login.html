@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>GreenMed</title>
-	<link rel="stylesheet" href="/assets/styles/styles.css">
-</head>
-
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pilulas & Bulas</title>
+		<link rel="stylesheet" href="/assets/styles/styles.css">
+	</head>
 
 	<body>
-		<header id="menu_header">
-			<nav>
-				<a href="/index.html">
-					<img src="./imagens/GreenMED_Logo.png" alt="Logotipo do Site">
-				</a>
 
-				<ul>
-					<li><a href="/index.html">Inicio</a></li>
-					<li><a href="./consulta.html">Pontos de Descarte</a></li>
-					<li><a href="./orientacoes.html">Orientações</a></li>
-					<li><a href="./about.html">Quem Somos</a></li>
-					<li><a href="./login.html">Administração</a></li>
-				</ul>
-			</nav>
-		</header>
+		<body>
+			<header id="menu_header">
+				<nav>
+					<a href="/index.html">
+						<img src="./imagens/GreenMED_Logo.png" alt="Logotipo do Site">
+					</a>
 
-		<main class="sp-main">
-			<!-- Formulário de Login -->
-			<section id="login-admin" class="login">
-				<div class="login__container">
-					<h2 class="login__titulo">Entre agora como administrador</h2>
-					<form action="/login" method="post" class="login__form">
-						<div class="login__campo">
-							<label for="username" class="login__label">Usuário:</label>
-							<input type="text" id="username" name="username" class="login__input" required>
-						</div>
+					<ul>
+						<li><a href="/index.html">Inicio</a></li>
+						<li><a href="./consulta.html">Pontos de Descarte</a></li>
+						<li><a href="./orientacoes.html">Orientações</a></li>
+						<li><a href="./about.html">Quem Somos</a></li>
+						<li><a href="./login.html">Administração</a></li>
+					</ul>
+				</nav>
+			</header>
 
-						<div class="login__campo">
-							<label for="password" class="login__label">Senha:</label>
-							<input type="password" id="password" name="password" class="login__input" required>
-						</div>
+			<main class="sp-main">
+				<!-- Formulário de Login -->
+				<section id="login-admin" class="login">
+					<div class="login__container">
+						<h2 class="login__titulo">Entre agora como administrador</h2>
+						<form id="loginForm" class="login__form">
+							<div class="login__campo">
+								<label for="username" class="login__label">Usuário:</label>
+								<input type="text" id="username" name="username" class="login__input" required>
+							</div>
 
-						<button type="submit" class="login__botao">Entrar</button>
-					</form>
-				</div>
-			</section>
-		</main>
+							<div class="login__campo">
+								<label for="password" class="login__label">Senha:</label>
+								<input type="password" id="password" name="password" class="login__input" required>
+							</div>
 
-		<footer>
-			<p>&copy; PJI 240 - DRP14 -Projeto Integrador em Computação II-Turma 005. Todos os direitos reservados.</p>
-		</footer>
+							<button type="submit" class="login__botao">Entrar</button>
+							<p id="loginMessage" style="color: red; display: none;">Credenciais inválidas.</p>
+						</form>
+					</div>
+				</section>
+			</main>
 
-		<script src="/assets/script/scripts.js"></script>
-	</body>
+			<footer>
+				<p>&copy; PJI 240 - DRP14 -Projeto Integrador em Computação II-Turma 005. Todos os direitos reservados.</p>
+			</footer>
+
+			<script src="/assets/script/scripts.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+		</body>
 
 </html>
